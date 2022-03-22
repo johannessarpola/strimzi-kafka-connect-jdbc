@@ -7,7 +7,7 @@ RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:$JDBC_VERS
 
 FROM alpine:3.9.6 as jdbc
 ARG MARIADB_VERSION=3.0.3
-RUN wget -nv https://downloads.mariadb.com/Connectors/java/connector-java-$MARIADB_VERSION/mariadb-java-client-$MARIADB_VERSION.jar -O mariadb-java-client.jar
+RUN wget -nv https://downloads.mariadb.com/Connectors/java/connector-java-$MARIADB_VERSION/mariadb-java-client-$MARIADB_VERSION.jar -O mariadb-java-client.jar " --user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6"
 
 FROM quay.io/strimzi/kafka:0.27.1-kafka-2.8.1
 
