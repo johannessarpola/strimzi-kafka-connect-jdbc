@@ -5,7 +5,7 @@ ARG AVRO_VERSION=7.0.1
 RUN confluent-hub install --no-prompt confluentinc/kafka-connect-avro-converter:${AVRO_VERSION}
 RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:$JDBC_VERSION
 
-FROM alpine/curl:3.14 as jdbc
+FROM curlimages/curl:latest as jdbc
 ARG MARIADB_VERSION=3.0.3
 RUN curl https://downloads.mariadb.com/Connectors/java/connector-java-$MARIADB_VERSION/mariadb-java-client-$MARIADB_VERSION.jar --output mariadb-java-client.jar
 
